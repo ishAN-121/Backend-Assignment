@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="css/books.css" type = "text/css">
+    <title>Admin-checkin</title>
+</head>
+<body>
+    <div class="full-page center">
+    <div class = "position">
+    <h1 class="title">Approve/Deny
+    </h1></div>
+<table class="table size">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">bookId</th>
+        <th scope="col">UserId</th>
+        <th scope="col">Status</th>
+        <th scope="col">Approve</th>
+        <th scope="col">Deny</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% request.forEach(function(item){ %>
+      <tr>
+        <th scope="row"><%= item.id%></th>
+        <td><%= item.bookId %></td>
+        <td><%= item.userId %></td>
+        <td><%= item.status %></td>
+        <td><form action="/approve-checkin" method="POST">  <input type="hidden" name="requestids" value="<%= item.id %>"class="form-control"/>
+        <button class=" btn btn-primary btn-sm m-1"type="submit"> Accept </button></form></td>
+        <td><form action="/deny-checkin" method="POST">  <input type="hidden" name="requestids" value="<%= item.id %>"class="form-control"/>
+            <button class=" btn btn-primary btn-sm m-1"type="submit"> Deny </button></form></td>
+            
+        
+      </tr>
+      <% }); %>
+      </tbody>
+  </table>
+  <div class ="links">
+    <a href = "logout"><button type="button" class="btn btn-primary btn-lg px-4 me-md-2 ">Logout</button></a>
+    <a href = "home"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Home</button></a></div>
+    </div>
+  </div>
+  <%- include('./partials/footer.ejs') %>
+</body>
+</html>

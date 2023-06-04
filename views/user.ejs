@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+        <link rel="stylesheet" href="css/user.css" type="text/css">
+        <title>USER DASHBOARD</title>
+</head>
+
+<body>
+    <div class="full-page center">
+        <h1 class="title">Hello, <%= data%>
+        </h1>
+        <div class="abc">
+            <a href="books"><button type="button" class="btn btn-primary fs-1 mb-3">VIEW BOOKS</button><br></a>
+            <a href="checkout"><button type="button" class="btn btn-primary">CHECKOUT</button><br></a>
+            <a href="checkin"><button type="button" class="btn btn-primary">CHECKIN</button><br></a>
+            <a href="checkout_books"><button type="button" class="btn btn-primary">VIEW ISSUED BOOKS</button><br></a>
+            <a href="logout"><button type="button" class="btn btn-primary">Logout</button><br></a>
+           
+        </div>
+
+    </div>
+
+
+
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+        <link rel="stylesheet" href="css/user.css" type="text/css">
+        <title>ADMIN DASHBOARD</title>
+</head>
+
+<body>
+    <div class="full-page center">
+        <h1 class="title">WELCOME, <%= data%>
+        </h1>
+        <div class="abc">
+            <a href="books"><button type="button" class="btn btn-primary fs-1 mb-3">VIEW BOOKS</button><br></a>
+            <a href="admin-checkout"><button type="button" class="btn btn-primary">Appprove/Deny Checkout</button><br></a>
+            
+            <a href="admin-checkin"><button type="button" class="btn btn-primary">APPROVE/DENY CHECKIN</button><br></a>
+            
+            <a href="update_add"><button type="button" class="btn btn-primary">ADD BOOK</button><br></a>
+            <a href="update-delete"><button type="button" class="btn btn-primary">DELETE BOOK</button><br></a>
+            <a href="logout"><button type="button" class="btn btn-primary">Logout</button><br></a>
+           
+        </div>
+
+    </div>
+
+
+
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

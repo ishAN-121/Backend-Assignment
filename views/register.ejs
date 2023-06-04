@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="css/register.css" type = "text/css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="col-md-10 mx-auto col-lg-5 centre">
+        <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post" action="/register">
+          <div class="form-floating mb-3">
+            <label for="floatingInput">Username</label>
+            <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Username">
+            </div>
+            <br>
+          <div class="form-floating mb-3">
+            <label for="floatingPassword">Password</label>
+            <input type="password" class="form-control" name = "password" id="floatingPassword" placeholder="Password">
+          
+          </div><br>
+          <div class="form-floating mb-3">
+            <label for="floatingPassword">Confirm Password</label>
+            <input type="password" class="form-control" name = "confirmpassword" id="floatingPassword" placeholder="Password">
+            
+          
+          </div><br>
+          <% if (error) { %>
+            <div class="alert alert-warning" role="alert">
+              <%= error %>
+            </div>
+          <% } %>
+          <% if (msg) { %>
+            <div class="alert alert-warning" role="alert">
+              <%= msg %>
+            </div>
+          <% } %>
+
+          <button class="w-100 btn btn-lg btn-primary" type="submit" value = "Sign Up">Register</button>
+          <% if (msg) { %>
+           <a href = "login"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Login</button></a> 
+         <% } %>
+          <hr class="my-4">
+          <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+        </form>
+      </div>
+    
+    <%- include('./partials/footer.ejs') %>
+ </body>
+ </html>   

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+        <link rel="stylesheet" href="css/login.css" type="text/css">
+        <title>Checkout</title>
+</head>
+
+<body>
+
+    <div class="col-md-10 mx-auto col-lg-5 centre">
+        <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post" action="/checkout">
+            <div class="form-floating mb-3">
+                <label for="floatingInput">BookId</label>
+                <input type="text" class="form-control" name="bookId" id="floatingInput" placeholder="999">
+            </div>
+            <br>
+            <div class="form-floating mb-3">
+                <label for="floatingInput">Title</label>
+                <input type="text" class="form-control" name="title" id="floatingInput" placeholder="Trial">
+            </div>
+            <br>
+            <div class="form-floating mb-3">
+                <label for="floatingInput">Author</label>
+                <input type="text" class="form-control" name="author" id="floatingInput" placeholder="XYZ">
+            </div>
+            <br>
+
+
+
+            <% if (error) { %>
+                <div class="alert alert-warning" role="alert">
+                    <%= error %>
+                </div>
+                <% } %>
+
+                    <%- include('./partials/footer.ejs') %>
+
+
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Checkout</button>
+                        <a href = "home"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Home</button></a></div>
+
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
